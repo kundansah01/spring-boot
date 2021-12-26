@@ -1,6 +1,8 @@
 pipeline{
     agent any
-    SERVER_CREDENTIALS = credential('test-credential')
+    environment{
+        SERVER_CREDENTIALS = credentials('test-credential')
+        }
     stages{
         stage("Pull Code From GitHub"){
             steps{
