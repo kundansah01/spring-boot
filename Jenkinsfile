@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        SERVER_CREDENTIALS = credentials('test-credential')
+        SERVER_CREDENTIALS = credentials('test')
         }
     stages{
         stage("Pull Code From GitHub"){
@@ -12,4 +12,4 @@ pipeline{
 
         }
     }
-}
+} 
