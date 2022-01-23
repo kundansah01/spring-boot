@@ -14,7 +14,6 @@ pipeline{
 
                 stage("Copy File From Jenkins Server To K-Master"){
             steps{
-                echo "Copy File From Jenkins Server To K-Master"
                 //echo "Your Test Credential are ${SERVER_CREDENTIALS} ${SERVER_CREDENTIALS_PSW}"
                 scripts{
                     withCredentials([usernamePassword(credentialsId: 'k-master', passwordVariable: 'pass', usernameVariable: 'user')]) {
@@ -22,6 +21,7 @@ pipeline{
                         sh 'hostname'
                         }
                 }
+                echo "Copy File From Jenkins Server To K-Master"
             }
  
         }
