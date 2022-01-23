@@ -16,7 +16,7 @@ pipeline{
             steps{
                 //echo "Your Test Credential are ${SERVER_CREDENTIALS} ${SERVER_CREDENTIALS_PSW}"
                 withCredentials([usernamePassword(credentialsId: 'k-master', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                        sh 'sshpass -p ${pass} ssh ${user}@10.0.0.10'
+                        sh 'sshpass -p '${pass}' ssh '${user}'@10.0.0.10'
                         sh 'hostname'
                     }
 
