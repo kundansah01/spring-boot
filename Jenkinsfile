@@ -31,7 +31,7 @@ pipeline{
                 script{
                     withCredentials([kubeconfigFile(credentialsId: 'k-master-config', variable: 'KUBECONFIG')]) {
                             sh 'kubectl get nodes'
-                            sh 'hostname'
+                            sh 'helm list'
                     }
 
                 }
