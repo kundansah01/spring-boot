@@ -34,7 +34,7 @@ pipeline{
                             sh 'helm list'
                             sh 'hostname'
                             sh 'pwd'
-                            sh 'kubectl -f ./web.yaml'
+                            sh 'kubectl apply -f ./web.yaml'
                     }
 
                 }
