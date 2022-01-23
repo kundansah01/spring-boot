@@ -19,7 +19,7 @@ pipeline{
                         //sh "sshpass -p '${pass}' ssh '${user}'@10.0.0.10"
                         //sh 'hostname'
                     //}
-                echo testings
+                echo "testings"
 
                 }
             }
