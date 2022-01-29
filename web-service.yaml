@@ -6,8 +6,7 @@ spec:
   selector:
     app: proxy
     role: webserver
-  type: LoadBalancer
   ports:
-  - port: 80
+  - protocol: TCP
+    port: 80
     targetPort: 80
-    nodePort: 30010
