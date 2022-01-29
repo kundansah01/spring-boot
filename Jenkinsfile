@@ -34,9 +34,9 @@ pipeline{
                             sh 'helm list'
                             sh 'hostname'
                             sh 'pwd'
-                            sh 'kubectl apply -f ./web.yaml'
-                            sh 'kubectl apply -f ./web-service.yaml'
-                            sh 'kubectl apply -f ./web-ingress.yaml'
+                            sh 'kubectl delete -f ./web.yaml'
+                            sh 'kubectl delete -f ./web-service.yaml'
+                            sh 'kubectl delete -f ./web-ingress.yaml'
                     }
 
                 }
