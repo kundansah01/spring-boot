@@ -1,25 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment1
+  name: Frontend
   labels:
-	app: nginx
+    app: proxy
+    role: webserver
 spec:
-  replicas: 3
+  replicas: 2
   selector:
-    matchlabels:
-      app: nginx
-template:
-  metadata:
-    labels:
-      app: nginx
-  spec:
-    containers:
-    - name: webserver1
-	  image: nginx:1.6
-	  ports:
- 	  - containerPort:80
-    - name: database-server
-	  image: mysql-3.2
-	  ports:
- 	  - containerPort:3306
+    matchLabels:
+      app: proxy
+      role: webserver
+  template:
+    metadata:
+      labels:
+        app: proxy
+        role: webserver
+    spec:
+      containers:
+      - name: web-01
+        image: nginx:1.6
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
