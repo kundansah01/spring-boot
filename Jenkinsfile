@@ -36,6 +36,7 @@ pipeline{
                             sh 'pwd'
                             sh 'kubectl apply -f ./web.yaml'
                             sh 'kubectl apply -f ./web-service.yaml'
+                            sh 'kubectl apply -f ./web-ingress.yaml'
                     }
 
                 }
